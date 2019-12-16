@@ -8,7 +8,7 @@ scoop install 7zip curl sudo git openssh coreutils ripgrep sed less imagemagick
 scoop bucket add extras
 
 # Applications
-scoop install cmder vscode vcredist2019
+scoop install cmder firefox heidisql vscode vcredist2019
 
 # Languages
 scoop install nodejs-lts
