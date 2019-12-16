@@ -4,15 +4,7 @@ Write-Output "Checking PHP install..."
 $php = scoop which php
 if ($lastexitcode -ne 0) { 'PHP isn''t installed. run ''scoop install php'''; return }
 
-
 $ini = "$(Split-Path -Resolve $php)/cli/php.ini"
-
-Write-Output "Downloading Imagick..."
-# Remove-Item Alias:\wget
-# Downloading the lastest version of Imagick extension as of 2019-12-13
-$wget = scoop which wget
-Write-Output "$wget https://windows.php.net/downloads/pecl/releases/imagick/3.4.4/php_imagick-3.4.4-7.4-ts-vc15-x64.zip | 7z x -si"
-
 
 Write-Output "Configuration options..."
 sed -i "s|max_execution_time = 30|max_execution_time = 60|" $ini
